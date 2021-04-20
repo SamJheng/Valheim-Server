@@ -1,0 +1,15 @@
+version: "3.9"
+services: 
+  valheim_server: 
+    image: lloesche/valheim-server
+    volumes: 
+      - $HOME/valheim-server/config:/config
+      - $HOME/valheim-server/data:/opt/valheim
+    ports: 
+      - "2456-2458:2456-2458/udp" 
+    environment: 
+      - SERVER_NAME=VikingsWorld
+      - SERVER_PASS=47174717
+      - WORLD_NAME=NWORLD
+      - SERVER_PUBLIC=true
+      - TZ="+08:00"
